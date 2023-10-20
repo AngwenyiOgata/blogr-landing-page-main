@@ -72,7 +72,9 @@ h3 {
 p {
   line-height: 1.5;
 }
-
+img {
+  display: block;
+}
 a:any-link {
   color: var(--LINK-COLOR);
 }
@@ -89,7 +91,89 @@ a:active {
 .attribution {
   font-size: 11px;
   text-align: center;
+  background: var(--Very-dark-black-blue-footer-background);
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+/* GENERAL STYLING */
+header {
+  background: url(../images/bg-pattern-intro-desktop.svg);
+  background-position: center;
+  background-size: cover;
+}
+
+
+
+
+
+footer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  border-top-right-radius: 5rem;
+  background: var(--Very-dark-black-blue-footer-background);
+  padding: 3rem 1rem;
+  flex-wrap: wrap;
+}
+footer article {
+  min-width: 230px;
+  margin-top: 30px;
+}
+footer article h4 {
+  font: 1rem var(--font-ubuntu);
+  color: var(--White-text);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.2rem;
+}
+footer article ul li {
+  display: flex;
+  justify-content: flex-start;
+  color: var(--Grayish-blue-footer-text);
+  font: 0.8rem var(--font-ubuntu);
+  letter-spacing: 0.3px;
+  font-weight: 400;
+  position: relative;
+  margin-bottom: 0.8rem;
+  width: 100%;
+}
+footer article ul li a {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: fit-content;
+}
+footer article ul li a::before {
+  content: '';
+  background: var(--Grayish-blue-footer-text);
+  top: 100%;
+  height: 2px;
+  width: 0%;
+  display: block;
+  position: absolute;
+}
+footer article ul li a:focus:before,
+footer article ul li a:active::before,
+footer article ul li a:hover::before {
+  width: 100%;
+}
+
+@media screen and (max-width: 450px) {
+  footer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+  footer article:first-child{
+    display: flex;
+    justify-content: center;
+  }
+  footer article h4,
+  footer article ul li {
+    text-align: center;
+    justify-content: center;
+  }
 }
